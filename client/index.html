@@ -6,18 +6,30 @@
         <script type="text/javascript" src="./client.js" defer></script>
     </head>
     <body>
-        <select id="pizza-selection" name="pizza-selection">
-            <option selected value="Margherita">Margherita</option>
-            <option value="Funghi">Funghi</option>
-            <option value="Hawaii">Hawaii</option>
-            <option value="Salami">Salami</option>
-            <option value="Tonno">Tonno</option>
-            <option value="Diavolo">Diavolo</option>
-            <option value="Provincale">Provincale</option>
-            <option value="Cleopatra">Cleopatra</option>
-            <option value="Veggie">Veggie</option>
-        </select>
+        <form id="pizza-form" action="#">
+            <input
+                type="text"
+                name="user"
+                placeholder="Your name..."
+                required
+            />
 
-        <button id="pizza-order">Order Pizza!</button>
+            <select id="pizza-selection" name="pizza-selection" required>
+                <option selected value="">Pick a pizza!</option>
+                <option value="Margherita">Margherita</option>
+                <option value="Funghi">Funghi</option>
+                <option value="Hawaii">Hawaii</option>
+                <option value="Salami">Salami</option>
+                <option value="Tonno">Tonno</option>
+                <option value="Diavolo">Diavolo</option>
+                <option value="Provincale">Provincale</option>
+                <option value="Cleopatra">Cleopatra</option>
+                <option value="Veggie">Veggie</option>
+            </select>
+
+            <button type="submit" id="pizza-order">Order Pizza!</button>
+        </form>
+
+        <div class="message"></div>
     </body>
 </html>

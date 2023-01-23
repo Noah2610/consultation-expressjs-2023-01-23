@@ -1,5 +1,7 @@
 const pizzaOrderButton = document.querySelector("#pizza-order");
 const pizzaSelection = document.querySelector("#pizza-selection");
+const pizzaForm = document.querySelector("#pizza-form");
+const messageEl = document.querySelector(".message");
 
 async function orderPizza(pizza) {
     const response = await fetch("http://0.0.0.0:8090/pizza/order", {
@@ -15,10 +17,17 @@ async function orderPizza(pizza) {
     });
     const body = await response.text();
 
-    console.log(body);
+    messageEl.innerText = body;
 }
 
-pizzaOrderButton.addEventListener("click", () => {
+pizzaForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
     const pizza = pizzaSelection.value;
-    orderPizza(pizza);
+
+    if (pizza) {
+        orderPizza(pizza);
+    } else {
+        messageEl.innerText = "Please select a pizza!";
+    }
 });
