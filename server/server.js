@@ -35,4 +35,12 @@ app.post("/pizza/order", (req, res) => {
     res.send(message);
 });
 
+app.get("/auth", (req, res) => {
+    res.redirect("/dashboard");
+});
+
+app.get("/dashboard", (req, res) => {
+    res.send("DASHBOARD");
+});
+
 app.listen(8090, "0.0.0.0");
